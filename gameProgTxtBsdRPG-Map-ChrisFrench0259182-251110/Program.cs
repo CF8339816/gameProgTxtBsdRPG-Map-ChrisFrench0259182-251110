@@ -39,6 +39,7 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
 
             DrawMap();
 
+            DMap();
 
 
 
@@ -66,7 +67,7 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
 
                     switch (map[x, y]) //changes colours
                     {
-                        case '-': // Grass
+                        case '`': // Grass
                             Console.ForegroundColor = ConsoleColor.Green;
                             break;
                         case '~': // Water
@@ -75,8 +76,8 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
                         case '^': // Mountain
                             Console.ForegroundColor = ConsoleColor.Gray;
                             break;
-                        case '*': // Mountain
-                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        case '*': // trees
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
                             break;
 
 
@@ -84,7 +85,7 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
 
 
 
-                    Console.Write(map[x, y] + " ");
+                    Console.Write(map[x, y] );
                 }
                 Console.WriteLine();
 
@@ -94,7 +95,43 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
             }
         }
         //m2
+        static void DMap()
+        {
 
+            for (int x = 0; x < map.GetLength(0); x++) // Rows
+            {
+                for (int y = 0; y < map.GetLength(1); y++) // Columns
+                {
+
+                    switch (map[x, y]) //changes colours
+                    {
+                        case '`': // Grass
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            break;
+                        case '~': // Water
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            break;
+                        case '^': // Mountain
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            break;
+                        case '*': // trees
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            break;
+
+
+                    }
+
+                    foreach map in map
+
+                    Console.Write(map[x, y] );
+                }
+                Console.WriteLine();
+
+
+                Console.ForegroundColor = ConsoleColor.White;
+
+            }
+        }
         //m3
 
         //m4
