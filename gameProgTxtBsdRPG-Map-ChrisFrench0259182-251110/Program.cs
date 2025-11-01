@@ -101,9 +101,9 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
                     Console.WriteLine();
 
 
-                    Console.ForegroundColor = ConsoleColor.White;
+                Console.ResetColor();
 
-                }
+            }
             }
 
             //m2
@@ -130,16 +130,63 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Trees");
 
-
-            }
+            Console.ResetColor();
+        }
 
 
         //m3
-      
+        static void DrawMap(int scale)
+        {
+            int rows = map.GetLength(0);
+
+            int cols = map.GetLength(1);
+
+            // for (int x = 0; x < map.GetLength(0); x++) // Rows
+            for (int x = 0; x < rows; x++)
+
+            {
+                //for (int y = 0; y < map.GetLength(1); y++) // Columns
+                for (int y = 0; y < cols; y++)
+
+                {
+                    char tile = map[x, y];
+                    switch (map[x, y]) //changes colours
+                    {
+
+                        case '`': // Grass
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            break;
+                        case '~': // Water
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            break;
+                        case '^': // Mountain
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            break;
+                        case '*': // Trees
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            break;
+
+
+                    }
+                    for (int colScale = 0; colScale < scale; colScale++)
+                    {
+                        Console.Write(tile);
+                    }
+
+
+                    Console.Write(map[x, y]/* + " "*/);
+                }
+                Console.WriteLine();
+
+
+                Console.ResetColor();
+
+            }
+        }
 
 
         //m4
-      
+
 
         //m5
 
