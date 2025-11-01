@@ -44,7 +44,7 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
 
 
 
-            DrawMap();
+            DrawMap(1);
             mapLegend();
 
 
@@ -67,44 +67,40 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
         //methods below here
 
         //m1
-        static void DrawMap()
-        {
+        //static void DrawMap()
+        //{
 
-            for (int x = 0; x < map.GetLength(0); x++)
-            {
-                for (int y = 0; y < map.GetLength(1); y++)
-                {
+        //    for (int x = 0; x < map.GetLength(0); x++)
+        //    {
+        //        for (int y = 0; y < map.GetLength(1); y++)
+        //        {
 
-                    switch (map[x, y]) //changes colours
-                    {
+        //            switch (map[x, y]) //changes colours
+        //            {
 
-                        case '`': // Grass
-                            Console.ForegroundColor = ConsoleColor.DarkGreen;
-                            break;
-                        case '~': // Water
-                            Console.ForegroundColor = ConsoleColor.Blue;
-                            break;
-                        case '^': // Mountain
-                            Console.ForegroundColor = ConsoleColor.Gray;
-                            break;
-                        case '*': // Trees
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            break;
+        //                case '`': // Grass
+        //                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+        //                    break;
+        //                case '~': // Water
+        //                    Console.ForegroundColor = ConsoleColor.Blue;
+        //                    break;
+        //                case '^': // Mountain
+        //                    Console.ForegroundColor = ConsoleColor.Gray;
+        //                    break;
+        //                case '*': // Trees
+        //                    Console.ForegroundColor = ConsoleColor.Green;
+        //                    break;
 
+        //            }
 
-                    }
+        //            Console.Write(map[x, y]);
+        //        }
+        //        Console.WriteLine();
 
+        //        Console.ResetColor();
 
-
-                    Console.Write(map[x, y]);
-                }
-                Console.WriteLine();
-
-
-                Console.ResetColor();
-
-            }
-        }
+        //    }
+        //}
 
         //m2
         static void mapLegend()
@@ -143,18 +139,18 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
 
             Border(cols, scale);
 
-            // for (int x = 0; x < map.GetLength(0); x++) 
-            for (int x = 0; x < rows; x++)
+             for (int x = 0; x < map.GetLength(0); x++) 
+            //for (int x = 0; x < rows; x++)
 
             {
                 for (int rowScale = 0; rowScale < scale; rowScale++)
                 {
-                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.Write("|");
 
                     {
-                        //for (int y = 0; y < map.GetLength(1); y++) 
-                        for (int y = 0; y < cols; y++)
+                        for (int y = 0; y < map.GetLength(1); y++) 
+                       // for (int y = 0; y < cols; y++)
 
                         {
                             char tile = map[x, y];
@@ -188,11 +184,15 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
                         // Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("|");
-
-                        Console.ResetColor();
+                        
                     }
+
                 }
+
             }
+                    Border(cols, scale);
+                    Console.ResetColor();
+
         }
 
 
