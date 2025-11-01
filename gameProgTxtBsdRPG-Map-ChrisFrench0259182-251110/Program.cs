@@ -153,7 +153,7 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
             Border(cols, scale);
 
              for (int x = 0; x < map.GetLength(0); x++) 
-            //for (int x = 0; x < rows; x++)
+           
 
             {
                 for (int rowScale = 0; rowScale < scale; rowScale++)
@@ -163,7 +163,7 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
 
                     {
                         for (int y = 0; y < map.GetLength(1); y++) 
-                       // for (int y = 0; y < cols; y++)
+                      
 
                         {
                             char tile = map[x, y];
@@ -191,8 +191,7 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
                                 Console.Write(tile);
                             }
 
-
-                            Console.Write(map[x, y]/* + " "*/);
+                          
                         }
                         // Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Magenta;
