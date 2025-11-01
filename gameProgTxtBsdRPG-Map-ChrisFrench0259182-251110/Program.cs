@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
@@ -40,19 +41,31 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
 
         static void Main(string[] args)
         {
-
-
-
-
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("DisplayMap():");
+            DrawMap(0);
+            Console.WriteLine();
+            mapLegend();
+            Console.WriteLine("\n");
+            Thread.Sleep(1500);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("DisplayMap(1):");
             DrawMap(1);
+            Console.WriteLine();
             mapLegend();
-
-
+            Console.WriteLine("\n");
+            Thread.Sleep(1500);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("DisplayMap(2):");
             DrawMap(2);
+            Console.WriteLine();
             mapLegend();
-
-
+            Console.WriteLine("\n");
+            Thread.Sleep(1500);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("DisplayMap(3):");
             DrawMap(3);
+            Console.WriteLine();
             mapLegend();
 
 
