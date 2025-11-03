@@ -32,7 +32,7 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
         // ` = grass
         // ~ = water
         // * = trees
-
+       // static int scale;
 
 
 
@@ -42,7 +42,9 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("DisplayMap():");
+            Console.Write("DisplayMap():");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine(" (added this one because it was in the examples) ");
             DrawMap(0);
             Console.WriteLine();
             mapLegend();
@@ -68,6 +70,14 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
             Console.WriteLine();
             mapLegend();
 
+            //Thread.Sleep(1500);
+
+            //getScale();
+            //Console.ForegroundColor = ConsoleColor.Cyan;
+            //Console.WriteLine($"DisplayMap({scale}):");
+            //DrawMap(3);
+            //Console.WriteLine();
+            //mapLegend();
 
 
 
@@ -79,41 +89,15 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
         }
         //methods below here
 
-        //m1
-        //static void DrawMap()
-        //{
+       // //m1
+       //static void getScale()
+       // {
 
-        //    for (int x = 0; x < map.GetLength(0); x++)
-        //    {
-        //        for (int y = 0; y < map.GetLength(1); y++)
-        //        {
+       //     Console.WriteLine("What scale would you like to try next?");
+       //     int scale = int.Parse(Console.ReadLine());
 
-        //            switch (map[x, y]) //changes colours
-        //            {
-
-        //                case '`': // Grass
-        //                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-        //                    break;
-        //                case '~': // Water
-        //                    Console.ForegroundColor = ConsoleColor.Blue;
-        //                    break;
-        //                case '^': // Mountain
-        //                    Console.ForegroundColor = ConsoleColor.Gray;
-        //                    break;
-        //                case '*': // Trees
-        //                    Console.ForegroundColor = ConsoleColor.Green;
-        //                    break;
-
-        //            }
-
-        //            Console.Write(map[x, y]);
-        //        }
-        //        Console.WriteLine();
-
-        //        Console.ResetColor();
-
-        //    }
-        //}
+       // }
+    
 
         //m2
         static void mapLegend()
