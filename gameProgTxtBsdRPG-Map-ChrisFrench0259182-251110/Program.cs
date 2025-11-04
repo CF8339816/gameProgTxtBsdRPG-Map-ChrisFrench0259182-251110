@@ -32,9 +32,9 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
         // ` = grass
         // ~ = water
         // * = trees
-       // static int scale;
-
-
+        static int customScale;
+        static string custScale;
+        static int scale;
 
 
 
@@ -70,12 +70,13 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
             Console.WriteLine();
             mapLegend();
 
+            //tried to make the scale user customizable but can't seem to get the input to convert and be recognised
             //Thread.Sleep(1500);
-
             //getScale();
             //Console.ForegroundColor = ConsoleColor.Cyan;
-            //Console.WriteLine($"DisplayMap({scale}):");
-            //DrawMap(3);
+            //Console.WriteLine($"DisplayMap({customScale}):");
+            //scale = customScale;        
+            //DrawMap(customScale);
             //Console.WriteLine();
             //mapLegend();
 
@@ -89,21 +90,22 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
         }
         //methods below here
 
-       // //m1
+        //m1
        //static void getScale()
        // {
 
        //     Console.WriteLine("What scale would you like to try next?");
-       //     int scale = int.Parse(Console.ReadLine());
-
+       //     string custScale = (Console.ReadLine());
+       //     int customScale = Convert.ToInt32(custScale);
+           
        // }
-    
+
 
         //m2
         static void mapLegend()
         {
 
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.Write(" `  ");
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Grass");
@@ -144,6 +146,7 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
                 {
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.Write("|");
+                    //Console.Write((char)7);
 
                     {
                         for (int y = 0; y < map.GetLength(1); y++) 
@@ -156,7 +159,7 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
                             {
 
                                 case '`': // Grass
-                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                                     break;
                                 case '~': // Water
                                     Console.ForegroundColor = ConsoleColor.Blue;
@@ -180,7 +183,7 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
                         // Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("|");
-                        
+                        //Console.WriteLine((char)7);
                     }
 
                 }
@@ -204,8 +207,10 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
             for (int i = 0; i < cols * scale; i++)
             {
                 Console.Write("-");
+                //Console.Write((char)7);
             }
             Console.WriteLine("+");
+            //Console.WriteLine((char)15);
         }
 
 
