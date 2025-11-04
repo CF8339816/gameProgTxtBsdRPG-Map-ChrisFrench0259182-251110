@@ -33,9 +33,13 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
         // ~ = water
         // * = trees
         static int customScale;
-        static string custScale;
+        static int custScale;
         static int scale;
 
+        static int asciiValue = 232; // ASCII value for 'bell'
+        
+
+        static int anotherAsciiValue = 206; // ASCII value for 'hollow star'
 
 
 
@@ -71,14 +75,14 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
             mapLegend();
 
             //tried to make the scale user customizable but can't seem to get the input to convert and be recognised
-            //Thread.Sleep(1500);
-            //getScale();
-            //Console.ForegroundColor = ConsoleColor.Cyan;
-            //Console.WriteLine($"DisplayMap({customScale}):");
-            //scale = customScale;        
-            //DrawMap(customScale);
-            //Console.WriteLine();
-            //mapLegend();
+            Thread.Sleep(1500);
+            getScale();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"DisplayMap({custScale}):");
+            // scale = customScale;
+            DrawMap(custScale);
+            Console.WriteLine();
+            mapLegend();
 
 
 
@@ -91,14 +95,14 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
         //methods below here
 
         //m1
-       //static void getScale()
-       // {
+        static void getScale()
+        {
 
-       //     Console.WriteLine("What scale would you like to try next?");
-       //     string custScale = (Console.ReadLine());
-       //     int customScale = Convert.ToInt32(custScale);
-           
-       // }
+            Console.WriteLine("What scale would you like to try next?");
+            custScale = int.Parse(Console.ReadLine());
+           //int customScale = Convert.ToInt32(custScale);
+
+        }
 
 
         //m2
@@ -145,9 +149,9 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
                 for (int rowScale = 0; rowScale < scale; rowScale++)
                 {
                     Console.ForegroundColor = ConsoleColor.Magenta;
-                    Console.Write("|");
+                    //Console.Write("|");
                     //Console.Write((char)7);
-
+                    Console.Write((char)asciiValue);
                     {
                         for (int y = 0; y < map.GetLength(1); y++) 
                       
@@ -182,8 +186,9 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
                         }
                         // Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Magenta;
-                        Console.WriteLine("|");
+                        //Console.WriteLine("|");
                         //Console.WriteLine((char)7);
+                        Console.WriteLine((char)asciiValue);
                     }
 
                 }
@@ -195,22 +200,23 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
         }
 
 
-
-
         //m4
 
         static void Border(int cols, int scale)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write("+");
+            //Console.Write("+");
+            Console.Write((char)anotherAsciiValue);
 
             for (int i = 0; i < cols * scale; i++)
             {
-                Console.Write("-");
+                //Console.Write("-");
                 //Console.Write((char)7);
+                Console.Write((char)asciiValue);
             }
-            Console.WriteLine("+");
+            //Console.WriteLine("+");
             //Console.WriteLine((char)15);
+            Console.WriteLine((char)anotherAsciiValue);
         }
 
 
