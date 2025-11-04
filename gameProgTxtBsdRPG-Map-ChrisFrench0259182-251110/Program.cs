@@ -74,7 +74,14 @@ namespace gameProgTxtBsdRPG_Map_ChrisFrench0259182_251110
             Console.WriteLine();
             mapLegend();
 
-            //tried to make the scale user customizable but can't seem to get the input to convert and be recognised
+            Console.WriteLine("\n");
+            Thread.Sleep(1500);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("DisplayMap(4):");
+            DrawMap(4);
+            Console.WriteLine();
+            mapLegend();
+
             Thread.Sleep(1500);
             getScale();
             Console.ForegroundColor = ConsoleColor.Cyan;
